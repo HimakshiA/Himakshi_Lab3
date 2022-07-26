@@ -1,25 +1,24 @@
-package com.himakshi.treesum;
+package com.himakshi.balancebracket.main;
+
+import com.himakshi.balancebracket.service.BalancingBrackets;
 
 public class Driver {
 
+	public static void main(String[] args) {
 
-		public static void main(String[] args) {
-			
-			
-			Node root = null;
-			FindSumPair findSP = new FindSumPair();
-			root = findSP.insert(root,40);
-			root = findSP.insert(root,20);
-			root = findSP.insert(root,60);
-			root = findSP.insert(root,10);
-			root = findSP.insert(root,30);
-			root = findSP.insert(root,50);
-			root = findSP.insert(root,70);
-			
-			int sum = 80;
-			findSP.findPairWithGivenSum(root,sum);
-		}
+		String bracketExpression =  "([[]])";
+
+
+
+		Boolean result;
+
+		result = BalancingBrackets.areBracketsBalanced (bracketExpression);
+
+		if (result)
+			System.out.println("The entered String has Balanced Brackets"); 
+		else
+			System.out.println("The entered Strings do not contain Balanced Brackets ");
 
 	}
 
-
+}
